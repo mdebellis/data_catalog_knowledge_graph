@@ -30,6 +30,8 @@ This will be a turtle file with all the info from the input file and generated v
     g.bind("dp", Namespace("https://www.michaeldebellis.com/dp/"))
  ```
 You will see several more statements that start with `g.bind(...` Those are all the prefixes I needed to use for the current example. If you use this you need to edit those and add any prefixes you need. If you have a 
-QName in the properties file like `ex:my_property` then you need to have a g.bind statement for each. Also, never remove the binding for the rdfs namespace as that is always needed because the function falls back to rdfs:label
-if it doesn't find a value for dp:embedding_label. Also, you need to keep the binding for the dp namespace as that is used both for the `dp:embedding_label` and `dp:embedding_note` annotation properties. 
-4) Have done limited testing. Only on the graph currently part of this repository. 
+QName in the properties file like `ex:my_property` then you need to have a g.bind statement for each. Also, never remove the binding for the rdfs namespace as that is always needed because the function falls back to `rdfs:label`
+if it doesn't find a value for dp:embedding_label. Also, you need to keep the binding for the dp namespace as that is used both for the `dp:embedding_label` and `dp:embedding_note` annotation properties.
+
+4) I use the Python library RDFLib. You will need to load that with pip
+5)  Have done limited testing. Only on the graph currently part of this repository. 
