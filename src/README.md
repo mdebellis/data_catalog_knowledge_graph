@@ -1,3 +1,5 @@
+# How to Use add_embedding_notes_from_properties.py
+
 The only Python file currently in this directory is add_embedding_notes.py The inputs to this are an RDF or OWL knowledge graph in Turtle format, another text file with a list of properties and
 parameters (--debug or --install) that determine if the function should generate a new turtle file or simply list the strings it would generate. Debug is the default. 
 The function iterates over each property in the properties file. These are meant to be properties that contain useful information for a Large Language Model (LLM) that supports a graph RAG system.
@@ -22,4 +24,12 @@ This is very tentative. Limitations:
 1) I assume that each property has either a dp:embedding_label or an rdfs:label value. I also assume that all strings are langStrings.
 2) The function is hard coded to generate an output file called: output_with_embedding_notes.ttl in the same directory as the function. 
 This will be a turtle file with all the info from the input file and generated vector embedding notres.
-3) Have done limited testing. Only on the graph currently part of this repository. 
+3) Right now the package prefixes are hard coded. Near the bottom of the file look for the following:
+ ```python
+ # Bind prefixes (adjust if needed)
+    g.bind("dp", Namespace("https://www.michaeldebellis.com/dp/"))
+ ```
+You will see several more statements that start with `g.bind(...` Those are all the prefixes I needed to use for the current example. If you use this you need to edit those and add any prefixes you need. If you have a 
+QName in the properties file like `ex:my_property` then you need to have a g.bind statement for each. Also, never remove the binding for the rdfs namespace as that is always needed because the function falls back to rdfs:label
+if it doesn't find a value for dp:embedding_label. Also, you need to keep the binding for the dp namespace as that is used both for the `dp:embedding_label` and `dp:embedding_note` annotation properties. 
+4) Have done limited testing. Only on the graph currently part of this repository. 
