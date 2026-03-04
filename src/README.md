@@ -1,6 +1,6 @@
 # How to Use add_embedding_notes_from_properties.py
 
-The only Python file currently in this directory is add_embedding_notes.py The inputs to this are an RDF or OWL knowledge graph in Turtle format, another text file with a list of properties and
+The only Python file currently in this directory is add_embedding_notes_from_properties.py The inputs to this are an RDF or OWL knowledge graph in Turtle format, another text file with a list of properties and
 parameters (--debug or --install) that determine if the function should generate a new turtle file or simply list the strings it would generate. Debug is the default. 
 The function iterates over each property in the properties file. These are meant to be properties that contain useful information for a Large Language Model (LLM) that supports a graph RAG system.
 An issue with such systems is that they don't have access to the significant information in the knowledge graph. This is a simple but fairly effective way to provide them with such information.
