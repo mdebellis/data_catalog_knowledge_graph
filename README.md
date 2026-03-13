@@ -1,5 +1,10 @@
-# Data Catalog Knowledge Graph
-This is a temporary repository and will be replaced by a much larger one in 1-3 months that is currently private. So this is just a "quick and dirty" way for me to share a few tentative results even though I'm not ready to make the entire repository public yet. When the real repository is made public all code, documentation, ontologies, and other files will be available under an open source license. This is for work I've been doing to model concepts like data catalogs and data products based on work like Dehgani. 
+# Data Catalog Knowledge Graph and RAG Embedding Notes
+⚠️ Temporary Repository
+
+This repository contains preliminary materials related to an upcoming project.
+It will be replaced by the official repository when the project is ready to go public. Estimated time: May-September 2026.
+
+This is a "quick and dirty" way for me to share a few tentative results even though I'm not ready to make the entire repository public yet. When the real repository is made public all code, documentation, ontologies, and other files will be available under an open source license. This is for work I've been doing to model concepts like data catalogs and data products based on work like Dehgani. 
 This currently contains an ontology and sample data for a data product and data catalog ontology. It is built on the following W3C vocabularies: PROV (data provenance), DCAT (data catalog), and SKOS (knowledge organization). In addition I use Dublin Core for metadata. On top of that I have two namespaces for new TBox entities: https://www.michaeldebellis.com/dp/ for modeling the concept of a Data Product. https://www.michaeldebellis.com/docs/ for modeling documents that are divided into docs:Document_Segments. This is to break down documents into small chunks so that we can use an LLM to generate vector embeddings and use a RAG architecture to ask questions and get answers based on the semantics of the documents. Finally, my work has been highly influence by Dehgani and her work on Data Mesh. She created a fictitious company called Daft as an example for various analytic scenarios. Daft was a fictitious company for audio streaming. I've created a fictitious company for video streaming I call StreamForge. So most of the ABox info is in the StreamForge namespace: https://www.michaeldebellis.com/streamforge/
 
 Documentation for the embedding generation scripts are in the python files and also in [src/README.md](src/README.md)
