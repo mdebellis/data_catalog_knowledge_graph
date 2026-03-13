@@ -1,4 +1,4 @@
-# How to Use add_embedding_notes_from_properties.py
+# Embedding Functions to Create Text strings that Communicate Graph Knowledge to an LLM for a RAG System
 
 The problem I'm trying to solve is that when building a graph RAG syste, the LLM does not have access to the information in the knowledge graph. My solution is to generate text strings from the knowledge graph and add those to a new annotation property called embedding_note. I was originally going to try something more sophisticated like using Graph2Vec or using a Python NLP library to generate english strings that capture the meaning of the knowledge graph. Thanks to the encouragement of a colleague who aked a very simple but good question: "Have you tried just basic pattern matching?" I realized I should try that. If nothing else, everything I would need to do with a sophisticated NLP approach, I would need to do with a basic pattern matching approach. Also, I had some practical work where it would have been good to have some kind of capability to do this but I didn't have time to do the more sophisticated approaches. 
 
