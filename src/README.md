@@ -14,9 +14,9 @@ embedding_note strings: "Creator Engagement Report Q3 2025 uses data product: SF
 The other function is add_embedding_notes_from_classes.py This adds type info such as: "StreamForge data catalog is an instance of Data Catalog" It also adds subsumption info such as: "Data Product is a kind of Data Catalog Asset". Where "kind of" is used to document that one class is a subclass of another. The file embedding_classes.txt defines all the classes to use. Note: for classes that are subclasses of Thing and included in that file, I don't bother adding strings such as "Activity is a kind of Thing". 
 
 This is very tentative. Limitations: 
-1) I assume that each property has either a dp:embedding_label or an rdfs:label value. I also assume that all strings are langStrings. If there is no rdfs:label but a skos:altLabel or skos:prefLabel this causes an error now (just temporary, will be refactored).
+1) I assume that each property has either a  ```dp:embedding_label ``` or an  ```rdfs:label ``` value. I also assume that all strings are langStrings. If there is no rdfs:label but a  ```skos:altLabel``` or  ```skos:prefLabel ``` this causes an error now (just temporary, will be refactored).
 2) The function is hard coded to generate an output file called: output_with_embedding_notes.ttl in the same directory as the function. 
-This will be a turtle file with all the info from the input file and generated vector embedding notres.
+This will be a turtle file with all the info from the input file and generated vector embedding notres. The file: data_product_catalog_w_embedding_notes.ttl is an example of the file generated from the file: stream_forge_data_catalog_3-12-26_no_embedding_notes.ttl.
 3) Right now the package prefixes are hard coded. Near the bottom of the file look for the following:
  ```python
  # Bind prefixes (adjust if needed)
